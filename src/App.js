@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { AttendanceAndLeavingBtton } from "./components/Atoms/Button/AttendanceAndLeavingBtton"
+import { AttendanceForgotPushOfButton } from "./components/Atoms/Button/AttendanceForgotPushOfButton";
 import { WatchIcon } from "./components/Atoms/Icons/WatchIcon";
+import { HeaderLink } from "./components/Atoms/Link/HeaderLink";
 import { CorporateLogo } from "./components/Atoms/Logo/CorporateLogo";
 import { TimesOfDay } from "./components/Atoms/TimesOfDay/TimesOfDay";
 
@@ -17,6 +19,8 @@ return (
     <TimesOfDay />
     <WatchIcon />
     <CorporateLogo />
+    <HeaderLink />
+    <AttendanceForgotPushOfButton />
   </div>
 );
 }

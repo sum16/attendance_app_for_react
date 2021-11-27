@@ -1,3 +1,5 @@
+import styled from "styled-components"
+
 export const AttendanceAndLeavingBtton = (props) => {
 
   const {workingFlg, ChangeWorkingFlag} = props;
@@ -6,11 +8,24 @@ export const AttendanceAndLeavingBtton = (props) => {
     {/* trueであれば退勤、falseであれば出勤に切り変える */}
     <div>
         {workingFlg ? (
-          <button onClick={ChangeWorkingFlag}>退勤</button>
+          <SButton onClick={ChangeWorkingFlag}>退勤</SButton>
         ) : (
-          <button onClick={ChangeWorkingFlag}>出勤</button>
+          <SButton onClick={ChangeWorkingFlag}>出勤</SButton>
         )}
     </div>
     </>
   )
 }
+
+
+const SButton = styled.button`
+  position: absolute;
+  width: 186px;
+  height: 72px;
+  left: 91px;
+  top: 247px;
+  background: #BCFFDB;
+  border-radius: 22px;
+  font-weight: bold;
+  font-size: 20px;
+`
