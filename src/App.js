@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AttendanceAndLeavingBtton } from "./components/Atoms/Button/AttendanceAndLeavingBtton"
+import { WatchIcon } from "./components/Atoms/Icons/WatchIcon";
 import { TimesOfDay } from "./components/Atoms/TimesOfDay/TimesOfDay";
 
 function App() {
@@ -13,6 +14,7 @@ return (
   <div className="App">
     <AttendanceAndLeavingBtton ChangeWorkingFlag={ChangeWorkingFlag} workingFlg={workingFlg} />
     <TimesOfDay />
+    <WatchIcon />
   </div>
 );
 }
