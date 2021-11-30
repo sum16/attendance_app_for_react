@@ -5,6 +5,7 @@ import { WatchIcon } from "./components/Atoms/Icons/WatchIcon";
 import { HeaderLink } from "./components/Atoms/Link/HeaderLink";
 import { CorporateLogo } from "./components/Atoms/Logo/CorporateLogo";
 import { TimesOfDay } from "./components/Atoms/TimesOfDay/TimesOfDay";
+import { Header } from "./components/Organisms/Header";
 import { StampingHistory } from "./components/Organisms/StampingHistory";
 
 function App() {
@@ -27,13 +28,22 @@ function App() {
 
   return (
     <div className="App">
+<<<<<<< Updated upstream
       <AttendanceAndLeavingBtton ChangeWorkingFlag={ChangeWorkingFlag} workingFlg={workingFlg} onClickAddDate={onClickAddDate} />
+=======
+      <Header />
+      {/* <AttendanceAndLeavingBtton ChangeWorkingFlag={ChangeWorkingFlag} workingFlg={workingFlg} onClickAddDate={onClickAddDate} onClickAddLeavingDate={onClickAddLeavingDate}/>
+>>>>>>> Stashed changes
       <TimesOfDay />
       <WatchIcon />
       <CorporateLogo />
       <HeaderLink />
       <AttendanceForgotPushOfButton />
+<<<<<<< Updated upstream
       <StampingHistory stampingHistories={stampingHistories}/>
+=======
+      <StampingHistory stampingHistories={stampingHistories} leavingHistories={leavingHistories}/> */}
+>>>>>>> Stashed changes
     </div>
   );
 }
