@@ -1,14 +1,14 @@
 import styled from "styled-components"
 
 export const AttendanceAndLeavingBtton = (props) => {
-  const {workingFlg, ChangeWorkingFlag, onClickAddDate} = props;
+  const {workingFlg, ChangeWorkingFlag, onClickAddDate, onClickAddLeavingDate} = props;
 
   return(
     <>
     {/* trueであれば退勤、falseであれば出勤に切り変える */}
     <div>
         {workingFlg ? (
-          <SButton onClick={ChangeWorkingFlag}>退勤</SButton>
+          <SButton onClick={() => {ChangeWorkingFlag(); onClickAddLeavingDate();}}>退勤</SButton>
         ) : (
           <SButton onClick={() => {ChangeWorkingFlag(); onClickAddDate();}}>出勤</SButton>
         )}
