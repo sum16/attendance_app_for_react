@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const AttendanceAndLeavingBtton = (props) => {
+  const {workingFlg, ChangeWorkingFlag, onClickAddDate} = props;
 
-  const {workingFlg, ChangeWorkingFlag} = props;
   return(
     <>
     {/* trueであれば退勤、falseであれば出勤に切り変える */}
@@ -10,13 +10,12 @@ export const AttendanceAndLeavingBtton = (props) => {
         {workingFlg ? (
           <SButton onClick={ChangeWorkingFlag}>退勤</SButton>
         ) : (
-          <SButton onClick={ChangeWorkingFlag}>出勤</SButton>
+          <SButton onClick={() => {ChangeWorkingFlag(); onClickAddDate();}}>出勤</SButton>
         )}
     </div>
     </>
   )
 }
-
 
 const SButton = styled.button`
   position: absolute;

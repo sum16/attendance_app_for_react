@@ -9,24 +9,25 @@ import { StampingHistory } from "./components/Organisms/StampingHistory";
 
 function App() {
   const [workingFlg, setWorkingFlg] = useState(false)
-  const [stampingHistories, SetstampingHistories] = useState(['火曜日', '金曜日'])
+  const [stampingHistories, SetstampingHistories] = useState([])
 
   const ChangeWorkingFlag = () => {
     setWorkingFlg(!workingFlg);
   }
 
-  const onClickAdd = () => {
-    // const date = new Date();
-    // const dayOfweek = date.getDay()
-    // const dayOfWeekStr = [ "日", "月", "火", "水", "木", "金", "土" ][dayOfweek]
-    // const currentDay = date.getFullYear() + "年" + date.getMonth() + "月" +  date.getDate() + "日"  + `${dayOfWeekStr}曜日`;
-    // const currentTime = date.getHours() + "：" + date.getMinutes() + "分";
-    alert('hoge');
+  const onClickAddDate = () => {
+    const date = new Date();
+    const dayOfweek = date.getDay()
+    const dayOfWeekStr = [ "日", "月", "火", "水", "木", "金", "土" ][dayOfweek]
+    const currentDay = date.getFullYear() + "年" + date.getMonth() + "月" +  date.getDate() + "日"  + `${dayOfWeekStr}曜日`;
+    const currentTime = date.getHours() + "：" + date.getMinutes() + "分";
+    const newDate = [currentDay, currentTime];
+    SetstampingHistories(newDate);
   };
 
   return (
     <div className="App">
-      <AttendanceAndLeavingBtton ChangeWorkingFlag={ChangeWorkingFlag} workingFlg={workingFlg} onClickAdd={onClickAdd} />
+      <AttendanceAndLeavingBtton ChangeWorkingFlag={ChangeWorkingFlag} workingFlg={workingFlg} onClickAddDate={onClickAddDate} />
       <TimesOfDay />
       <WatchIcon />
       <CorporateLogo />
