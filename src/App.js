@@ -5,6 +5,7 @@ import { WatchIcon } from "./components/Atoms/Icons/WatchIcon";
 import { HeaderLink } from "./components/Atoms/Link/HeaderLink";
 import { CorporateLogo } from "./components/Atoms/Logo/CorporateLogo";
 import { TimesOfDay } from "./components/Atoms/TimesOfDay/TimesOfDay";
+import { Header } from "./components/Organisms/header";
 import { StampingHistory } from "./components/Organisms/StampingHistory";
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <AttendanceAndLeavingBtton ChangeWorkingFlag={ChangeWorkingFlag} workingFlg={workingFlg} onClickAddDate={onClickAddDate} onClickAddLeavingDate={onClickAddLeavingDate}/>
       <TimesOfDay />
       <WatchIcon />
