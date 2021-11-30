@@ -1,15 +1,28 @@
 import styled from "styled-components"
 
 export const StampingHistory = (props) => {
-  const {stampingHistories} = props;
+  const {stampingHistories, leavingHistories} = props;
 
   return(
     <>
     <Scontainer>
+    <h2>打刻履歴</h2>
       <div className="stampingHistory-area">
-        <p>打刻履歴</p>
+        <p>出勤履歴</p>
         <ul>
           {stampingHistories.map((history) => {
+            return(
+              <div key={history} className="list-row">
+                <li>{history}</li>
+              </div>
+            )
+          })}
+        </ul>
+      </div>
+      <div className="stampingHistory-leaving-area">
+        <p>退勤履歴</p>
+        <ul>
+          {leavingHistories.map((history) => {
             return(
               <div key={history} className="list-row">
                 <li>{history}</li>

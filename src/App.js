@@ -10,6 +10,7 @@ import { StampingHistory } from "./components/Organisms/StampingHistory";
 function App() {
   const [workingFlg, setWorkingFlg] = useState(false)
   const [stampingHistories, SetstampingHistories] = useState([])
+  const [leavingHistories, setLeavingHistories] = useState([])
 
   const ChangeWorkingFlag = () => {
     setWorkingFlg(!workingFlg);
@@ -25,15 +26,25 @@ function App() {
     SetstampingHistories(newDate);
   };
 
+  const onClickAddLeavingDate = () => {
+    const date = new Date();
+    const dayOfweek = date.getDay()
+    const dayOfWeekStr = [ "日", "月", "火", "水", "木", "金", "土" ][dayOfweek]
+    const currentDay = date.getFullYear() + "年" + date.getMonth() + "月" +  date.getDate() + "日"  + `${dayOfWeekStr}曜日`;
+    const currentTime = date.getHours() + "：" + date.getMinutes() + "分";
+    const newDate = [currentDay, currentTime];
+    setLeavingHistories(newDate)
+  }
+
   return (
     <div className="App">
-      <AttendanceAndLeavingBtton ChangeWorkingFlag={ChangeWorkingFlag} workingFlg={workingFlg} onClickAddDate={onClickAddDate} />
+      <AttendanceAndLeavingBtton ChangeWorkingFlag={ChangeWorkingFlag} workingFlg={workingFlg} onClickAddDate={onClickAddDate} onClickAddLeavingDate={onClickAddLeavingDate}/>
       <TimesOfDay />
       <WatchIcon />
       <CorporateLogo />
       <HeaderLink />
       <AttendanceForgotPushOfButton />
-      <StampingHistory stampingHistories={stampingHistories}/>
+      <StampingHistory stampingHistories={stampingHistories} leavingHistories={leavingHistories}/>
     </div>
   );
 }
