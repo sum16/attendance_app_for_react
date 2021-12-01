@@ -4,23 +4,18 @@ import { TimesOfDay } from "../Atoms/TimesOfDay/TimesOfDay"
 import { Header } from "../Organisms/header"
 import { StampingHistory } from "../Organisms/StampingHistory"
 import { ChakraProvider } from '@chakra-ui/react'
+import theme from "../../theme/theme"
 
 export const TopPage = () => {
   return(
     <>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Header />
-      <Smain>
+      <div>
         <TimesOfDay />
         <AttendanceAndLeavingBtton />
-      </Smain>
+      </div>
     </ChakraProvider>
     </>
   )
 }
-
-const Smain = styled.div`
-  // padding-bottom:150px;
-  margin: 0 auto;
-
-`
