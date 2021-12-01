@@ -11,10 +11,8 @@ export const TopPage = () => {
     <>
     <ChakraProvider theme={theme}>
       <Header />
-      <div>
         <TimesOfDay />
         <AttendanceAndLeavingBtton />
-      </div>
     </ChakraProvider>
     </>
   )

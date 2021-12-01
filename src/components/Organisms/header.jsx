@@ -1,50 +1,18 @@
-import styled from "styled-components"
+import { Box, Flex, Heading, Link } from "@chakra-ui/layout"
 
 export const Header = () => {
   return(
     <>
-    <Sheader>
-    <Sh1><Sa href="/">企業ロゴ</Sa></Sh1>
-      <nav>
-        <Sul>
-          <Sli>名前</Sli>
-        </Sul>
-      </nav>
-    </Sheader>
+    <Flex as="nav" bg="purple.900" color="gray.50" padding={{ base: 3, md: 5}} align="center">
+      <Flex align="center" as="a" _hover={{ cursor: "pointer" }}>
+        <Heading as="h1" fontSize={{ base: "md", md: "lg"}}>勤怠管理アプリ</Heading>
+      </Flex>
+      <Flex align="center" fontSize="sm">
+        <Box ml={10}>
+          <Link color="white">名前aaaaa</Link>
+        </Box>
+      </Flex>
+    </Flex>
     </>
   )
 }
-
-const Sheader = styled.header`
-  position: fixed;
-  width: 100%;
-  color: #fff;
-  padding: 30px 4% 10px;
-  top: 0;
-  background: #4C4B63;
-  display: flex;
-  height:60px;
-  align-items: center;
-  `
-
-const Sa = styled.a`
-  text-decoration: none;
-  color: #fff;
-`
-
-const Sul = styled.ul`
- list-style: none;
- margin: 0;
- display: flex;
-`
-
-const Sli = styled.li`
-  margin: 0 0 0 15px;
-  font-size: 14px;
-`
-
-const Sh1 = styled.h1`
-  margin: 0; padding: 0;
-  font-size: 20px;
-  display: flex;
-`
