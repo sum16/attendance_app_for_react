@@ -1,4 +1,5 @@
-import styled from "styled-components"
+import { Button } from "@chakra-ui/button";
+import { Box, Flex } from "@chakra-ui/layout";
 
 export const AttendanceAndLeavingBtton = (props) => {
   const {workingFlg, ChangeWorkingFlag, onClickAddDate, onClickAddLeavingDate} = props;
@@ -6,25 +7,15 @@ export const AttendanceAndLeavingBtton = (props) => {
   return(
     <>
     {/* trueであれば退勤、falseであれば出勤に切り変える */}
-    <div>
-        {workingFlg ? (
-          <SButton onClick={() => {ChangeWorkingFlag(); onClickAddLeavingDate();}}>退勤</SButton>
-        ) : (
-          <SButton onClick={() => {ChangeWorkingFlag(); onClickAddDate();}}>出勤</SButton>
-        )}
-    </div>
+    <Flex justify="center">
+      <Box mt={150}>
+          {workingFlg ? (
+            <Button colorScheme='teal' size="lg" height='72px' width="186px" variant='solid' onClick={() => {ChangeWorkingFlag(); onClickAddLeavingDate();}}>退勤</Button>
+          ) : (
+            <Button colorScheme='teal' size="lg" height='72px' width="186px" variant='solid' onClick={() => {ChangeWorkingFlag(); onClickAddDate();}}>出勤</Button>
+          )}
+      </Box>
+    </Flex>
     </>
   )
 }
-
-const SButton = styled.button`
-  position: absolute;
-  width: 186px;
-  height: 72px;
-  left: 91px;
-  top: 247px;
-  background: #BCFFDB;
-  border-radius: 22px;
-  font-weight: bold;
-  font-size: 20px;
-`
