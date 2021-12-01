@@ -9,7 +9,7 @@ export const Header = () => {
       </Flex>
       <Flex align="center" fontSize="sm">
         <Box ml={10}>
-          <Link color="white">名前aaaaa</Link>
+          <Link color="white">名前</Link>
         </Box>
       </Flex>
     </Flex>
