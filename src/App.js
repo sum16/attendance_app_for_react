@@ -41,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      < TopPage />
+      < TopPage stampingHistories={stampingHistories} leavingHistories={leavingHistories} />
       {/* <Header />
       <AttendanceAndLeavingBtton ChangeWorkingFlag={ChangeWorkingFlag} workingFlg={workingFlg} onClickAddDate={onClickAddDate} onClickAddLeavingDate={onClickAddLeavingDate}/>
       <TimesOfDay />
