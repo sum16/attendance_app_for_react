@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { AttendanceAndLeavingBtton } from "./components/Atoms/Button/AttendanceAndLeavingBtton"
-import { AttendanceForgotPushOfButton } from "./components/Atoms/Button/AttendanceForgotPushOfButton";
-import { WatchIcon } from "./components/Atoms/Icons/WatchIcon";
-import { HeaderLink } from "./components/Atoms/Link/HeaderLink";
-import { CorporateLogo } from "./components/Atoms/Logo/CorporateLogo";
-import { TimesOfDay } from "./components/Atoms/TimesOfDay/TimesOfDay";
-import { Header } from "./components/Organisms/header";
-import { StampingHistory } from "./components/Organisms/StampingHistory";
+// import { AttendanceAndLeavingBtton } from "./components/Atoms/Button/AttendanceAndLeavingBtton"
+// import { AttendanceForgotPushOfButton } from "./components/Atoms/Button/AttendanceForgotPushOfButton";
+// import { WatchIcon } from "./components/Atoms/Icons/WatchIcon";
+// import { HeaderLink } from "./components/Atoms/Link/HeaderLink";
+// import { CorporateLogo } from "./components/Atoms/Logo/CorporateLogo";
+// import { TimesOfDay } from "./components/Atoms/TimesOfDay/TimesOfDay";
+// import { Header } from "./components/Organisms/header";
+// import { StampingHistory } from "./components/Organisms/StampingHistory";
+import { TopPage } from "./components/Pages/TopPage";
+import "./index.css"
 
 function App() {
   const [workingFlg, setWorkingFlg] = useState(false)
@@ -39,14 +41,15 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      < TopPage />
+      {/* <Header />
       <AttendanceAndLeavingBtton ChangeWorkingFlag={ChangeWorkingFlag} workingFlg={workingFlg} onClickAddDate={onClickAddDate} onClickAddLeavingDate={onClickAddLeavingDate}/>
       <TimesOfDay />
       <WatchIcon />
       <CorporateLogo />
       <HeaderLink />
       <AttendanceForgotPushOfButton />
-      <StampingHistory stampingHistories={stampingHistories} leavingHistories={leavingHistories}/>
+      <StampingHistory stampingHistories={stampingHistories} leavingHistories={leavingHistories}/> */}
     </div>
   );
 }
