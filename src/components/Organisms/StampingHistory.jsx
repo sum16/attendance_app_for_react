@@ -1,4 +1,3 @@
-// import styled from "styled-components"
 import { Box, Flex, Heading, ListItem, UnorderedList } from "@chakra-ui/layout";
 
 export const StampingHistory = (props) => {

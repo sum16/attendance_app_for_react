@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Login } from "./components/Pages/Login";
 import { TopPage } from "./components/Pages/TopPage";
 import "./index.css";
 
@@ -47,14 +48,15 @@ function App() {
 
   return (
     <div className="App">
-      <TopPage
+      {/* <TopPage
         stampingHistories={stampingHistories}
         leavingHistories={leavingHistories}
         onClickAddAttendanceDate={onClickAddAttendanceDate}
         onClickAddLeavingDate={onClickAddLeavingDate}
         workingFlg={workingFlg}
         ChangeWorkingFlag={ChangeWorkingFlag}
-      />
+      /> */}
+      <Login />
     </div>
   );
 }
