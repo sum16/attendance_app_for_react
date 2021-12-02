@@ -3,8 +3,15 @@ import { Box, Divider, Flex, Heading, Stack } from "@chakra-ui/layout";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../../theme/theme";
 import { PrimaryLoginButton } from "../Atoms/Button/PrimaryLoginButton";
+import { useState } from "react";
 
 export const Login = () => {
+  const [userId, setUserId] = useState("");
+
+  const onChengeUserId = (event) => {
+    setUserId(event.target.value);
+  };
+
   return (
     <ChakraProvider theme={theme}>
       <Flex align="center" justify="center" height="100vh">
@@ -14,7 +21,11 @@ export const Login = () => {
           </Heading>
           <Divider my={4} />
           <Stack spacing={8} py={4} px={10}>
-            <Input placeholder="ユーザーID" />
+            <Input
+              placeholder="ユーザーID"
+              value={userId}
+              onChange={onChengeUserId}
+            />
             <PrimaryLoginButton>ログイン</PrimaryLoginButton>
           </Stack>
         </Box>
