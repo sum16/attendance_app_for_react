@@ -1,15 +1,29 @@
-import { Switch } from "@chakra-ui/switch";
 import { memo } from "react";
-import { Route } from "react-router";
-import { Home } from "../components/Pages/Home";
+import { Route, Switch } from "react-router";
 import { Login } from "../components/Pages/Login";
 import { TopPage } from "../components/Pages/TopPage";
+import { HomeRoutes } from "./HomeRoutes";
 
 export const Router = memo(() => {
   return (
     <Switch>
-      <Route exact path="/" render={() => <Home />}></Route>
-      <Route path="/login" render={() => <Login />}></Route>
+      <Route exact path="/" render={() => <Login />}></Route>
+      <Route
+        path="/home"
+        render={({ match: { url } }) => (
+          <Switch>
+            {HomeRoutes.map((route) => (
+              <Route
+                key={route.path}
+                exact={route.exact}
+                path={`${url}${route.path}`}
+              >
+                {route.children}
+              </Route>
+            ))}
+          </Switch>
+        )}
+      />
       <Route path="/top" render={() => <TopPage />}></Route>
     </Switch>
   );
