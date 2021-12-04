@@ -14,7 +14,8 @@ export const Login = () => {
 
   return (
     <ChakraProvider theme={theme}>
-      <Flex align="center" justify="center" height="100vh">
+      {/* 後ほどレスポンシブ */}
+      <Flex align="center" justify="center" height="100vh" width="1200px">
         <Box bg="white" w="sm" p={4} borderRadius="md" shadow="md">
           <Heading as="h1" size="lg" textAlign="center">
             勤怠管理アプリ
