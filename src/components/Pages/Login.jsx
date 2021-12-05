@@ -4,12 +4,18 @@ import { ChakraProvider } from "@chakra-ui/react";
 import theme from "../../theme/theme";
 import { PrimaryLoginButton } from "../Atoms/Button/PrimaryLoginButton";
 import { useState } from "react";
+import { useAuth } from "../../hooks/useAuth";
 
 export const Login = () => {
   const [userId, setUserId] = useState("");
+  const { login, loading } = useAuth();
 
   const onChengeUserId = (event) => {
     setUserId(event.target.value);
+  };
+
+  const onClickLogin = () => {
+    login(userId);
   };
 
   return (
@@ -27,7 +33,11 @@ export const Login = () => {
               value={userId}
               onChange={onChengeUserId}
             />
-            <PrimaryLoginButton>ログイン</PrimaryLoginButton>
+            <PrimaryLoginButton onClickLogin={onClickLogin}>
+              <div>
+                <div>ログイン</div>
+              </div>
+            </PrimaryLoginButton>
           </Stack>
         </Box>
       </Flex>
