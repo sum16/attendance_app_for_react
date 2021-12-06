@@ -33,7 +33,12 @@ export const Login = () => {
               value={userId}
               onChange={onChengeUserId}
             />
-            <PrimaryLoginButton onClickLogin={onClickLogin}>
+            <PrimaryLoginButton
+              // ユーザーidが空のときはdisabled
+              disabled={userId === ""}
+              loading={loading}
+              onClickLogin={onClickLogin}
+            >
               <div>
                 <div>ログイン</div>
               </div>
