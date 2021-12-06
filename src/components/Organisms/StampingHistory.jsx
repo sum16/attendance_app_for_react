@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, ListItem, UnorderedList } from "@chakra-ui/layout";
 
 export const StampingHistory = (props) => {
-  const { stampingHistories, leavingHistories } = props;
+  const { stampingHistoriesGroup, leavingHistoriesGroup } = props;
 
   return (
     <>
@@ -27,7 +27,7 @@ export const StampingHistory = (props) => {
                 </Box>
               </Flex>
               <UnorderedList>
-                {stampingHistories.map((history) => {
+                {stampingHistoriesGroup.map((history) => {
                   return (
                     <Box key={history} className="list-row">
                       <ListItem>{history}</ListItem>
@@ -50,7 +50,7 @@ export const StampingHistory = (props) => {
                 </Box>
               </Flex>
               <UnorderedList>
-                {leavingHistories.map((history) => {
+                {leavingHistoriesGroup.map((history) => {
                   return (
                     <Box key={history} className="list-row">
                       <ListItem>{history}</ListItem>

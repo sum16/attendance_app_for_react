@@ -7,9 +7,16 @@ import theme from "../../theme/theme";
 import { useState } from "react";
 
 export const TopPage = () => {
+  // ボタンを切り替えるフラグ
   const [workingFlg, setWorkingFlg] = useState(false);
+  // 1回の出勤履歴を保持するステート
   const [stampingHistories, SetstampingHistories] = useState([]);
+  // 1回の退勤履歴を保持するステート
   const [leavingHistories, setLeavingHistories] = useState([]);
+  // 出勤履歴のグループを保持するステート
+  const [stampingHistoriesGroup, setStampingHistoriesGroup] = useState([]);
+  // 退勤履歴のグループを保持するステート
+  const [leavingHistoriesGroup, setLeavingHistoriesGroup] = useState([]);
 
   const ChangeWorkingFlag = () => {
     setWorkingFlg(!workingFlg);
@@ -30,6 +37,8 @@ export const TopPage = () => {
     const currentTime = date.getHours() + "：" + date.getMinutes() + "分";
     const newDate = [currentDay, currentTime];
     SetstampingHistories(newDate);
+    const attendanceGroup = [...stampingHistoriesGroup, stampingHistories];
+    setStampingHistoriesGroup(attendanceGroup);
   };
 
   const onClickAddLeavingDate = () => {
@@ -47,6 +56,8 @@ export const TopPage = () => {
     const currentTime = date.getHours() + "：" + date.getMinutes() + "分";
     const newDate = [currentDay, currentTime];
     setLeavingHistories(newDate);
+    const leavingGroup = [...leavingHistoriesGroup, leavingHistories];
+    setLeavingHistoriesGroup(leavingGroup);
   };
 
   return (
@@ -61,8 +72,8 @@ export const TopPage = () => {
           onClickAddLeavingDate={onClickAddLeavingDate}
         />
         <StampingHistory
-          stampingHistories={stampingHistories}
-          leavingHistories={leavingHistories}
+          stampingHistoriesGroup={stampingHistoriesGroup}
+          leavingHistoriesGroup={leavingHistoriesGroup}
         />
       </ChakraProvider>
     </>
