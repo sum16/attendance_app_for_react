@@ -2,7 +2,7 @@ import { Image } from "@chakra-ui/image";
 import { Box, Stack, Text } from "@chakra-ui/layout";
 
 export const UserCard = (props) => {
-  const { imageUrl, userName, fullName, onClick } = props;
+  const { id, imageUrl, userName, fullName, onClick } = props;
   return (
     <Box
       w="260px"
@@ -12,7 +12,7 @@ export const UserCard = (props) => {
       borderRadius="10px"
       p={4}
       _hover={{ cursor: "pointer", opacity: 0.8 }}
-      onClick={onClick}
+      onClick={() => onClick(id)}
     >
       <Stack textAlign="center">
         <Image

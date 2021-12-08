@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/modal";
 
 export const UserDetailModal = (props) => {
-  const { isOpen, onClose } = props;
+  const { isOpen, onClose, user } = props;
   return (
     <Modal isOpen={isOpen} onClose={onClose} autoFocus={false}>
       <ModalOverlay />
@@ -22,11 +22,11 @@ export const UserDetailModal = (props) => {
           <Stack spacing={4}>
             <FormControl>
               <FormLabel>名前</FormLabel>
-              <Input value="佐藤" isReadOnly />
+              <Input value={user.name} isReadOnly />
             </FormControl>
             <FormControl>
               <FormLabel>メールアドレス</FormLabel>
-              <Input value="mail" isReadOnly />
+              <Input value={user.email} isReadOnly />
             </FormControl>
           </Stack>
         </ModalBody>
