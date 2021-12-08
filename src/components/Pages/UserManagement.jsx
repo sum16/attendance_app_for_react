@@ -1,19 +1,11 @@
-import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { useDisclosure } from "@chakra-ui/hooks";
-import { Input } from "@chakra-ui/input";
-import { Stack, Wrap, WrapItem } from "@chakra-ui/layout";
-import {
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalHeader,
-  ModalOverlay,
-} from "@chakra-ui/modal";
+import { Wrap, WrapItem } from "@chakra-ui/layout";
+
 import { Spinner } from "@chakra-ui/spinner";
 import { useCallback, useEffect } from "react";
 import { useFetchUseAllUsers } from "../../hooks/useFetchUseAllUsers";
 import { UserCard } from "../Organisms/UserCard";
+import { UserDetailModal } from "../Organisms/UserDetailModal";
 
 export const UserManagement = () => {
   const { getAllUsers, loading, users } = useFetchUseAllUsers();
@@ -47,26 +39,8 @@ export const UserManagement = () => {
           ))}
         </Wrap>
       )}
-      <Modal isOpen={isOpen} onClose={onClose} autoFocus={false}>
-        <ModalOverlay />
-        <ModalContent pb={6}>
-          <ModalHeader>ユーザー詳細</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody mx={4}>
-            <Stack spacing={4}>
-              <FormControl>
-                <FormLabel>名前</FormLabel>
-                <Input value="佐藤" isReadOnly />
-              </FormControl>
-              <FormControl>
-                <FormLabel>メールアドレス</FormLabel>
-                <Input value="mail" isReadOnly />
-              </FormControl>
-            </Stack>
-          </ModalBody>
-          <p>テスト</p>
-        </ModalContent>
-      </Modal>
+      {/* ユーザー詳細のモーダルコンポーネント */}
+      <UserDetailModal isOpen={isOpen} onClose={onClose} />
     </>
   );
 };
