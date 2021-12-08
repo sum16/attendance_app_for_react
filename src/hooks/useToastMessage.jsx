@@ -11,7 +11,7 @@ export const useToastMessage = () => {
       description,
       status,
       position: "top",
-      duration: 9000,
+      duration: 2000,
       isClosable: true,
     });
   };
