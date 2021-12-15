@@ -1,24 +1,9 @@
 import { Box, Flex, Heading, Link } from "@chakra-ui/layout";
-import axios from "axios";
-import { useState } from "react";
+import { useFeachUserName } from "../../hooks/useFeachUserName";
 
 export const Header = () => {
-  const [userName, setUserName] = useState("");
-  const feachUserName = () => {
-    axios
-      .get(`https://jsonplaceholder.typicode.com/users/1`)
-      .then((res) => {
-        if (res.data) {
-          setUserName(res.data.name);
-        } else {
-          return "見つかりません";
-        }
-      })
-      .catch(() => {
-        alert("名前が見つかりません");
-      });
-  };
-
+  const { feachUserName, userName } = useFeachUserName();
+  // 名前を取得
   feachUserName();
   return (
     <>
